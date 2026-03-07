@@ -324,4 +324,5 @@ the Llama3 model must be pulled before running the API.
 
 1. Install Ollama
 2. Run: ollama run llama3
-3. Start the backend: node server.js
+3. Start the backend: node server.js#   a i - a u t o - c a t e g o r y - t a g - g e n e r a t o r  
+ 
