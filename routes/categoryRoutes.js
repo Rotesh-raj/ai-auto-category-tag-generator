@@ -1,36 +1,39 @@
-const express = require('express');
-const router = express.Router();
-const categoryController = require('../controllers/categoryController');
+// controllers/categoryController.js
 
-/**
- * Category Routes
- * Base path: /api/category
- */
+const generateCategory = (req, res) => {
+  const { name, description } = req.body;
 
-/**
- * POST /api/category/generate
- * Generate category and tags for a product
- * Body: { name: string, description: string }
- */
-router.post('/generate', categoryController.generateCategory);
+  res.json({
+    success: true,
+    product: name,
+    category: "Eco Products",
+    tags: ["eco-friendly", "sustainable", "green"]
+  });
+};
 
-/**
- * GET /api/category/products
- * Get all products with their categories
- */
-router.get('/products', categoryController.getAllProducts);
+const getAllProducts = (req, res) => {
+  res.json({
+    success: true,
+    products: []
+  });
+};
 
-/**
- * GET /api/category/products/:id
- * Get a specific product by ID
- */
-router.get('/products/:id', categoryController.getProductById);
+const getProductById = (req, res) => {
+  res.json({
+    success: true,
+    id: req.params.id
+  });
+};
 
-/**
- * GET /api/category/categories
- * Get available primary categories and sustainability filters
- */
-router.get('/categories', categoryController.getCategories);
+const getCategories = (req, res) => {
+  res.json({
+    categories: ["Clothing", "Oral Care", "Kitchen", "Lifestyle"]
+  });
+};
 
-module.exports = router;
-
+module.exports = {
+  generateCategory,
+  getAllProducts,
+  getProductById,
+  getCategories
+};
