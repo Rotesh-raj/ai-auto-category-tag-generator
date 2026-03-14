@@ -5,6 +5,8 @@ const path = require('path');
 
 // Import routes
 const categoryRoutes = require('./routes/categoryRoutes');
+const categoryRoutes = require('./routes/categoryRoutes');
+console.log("Category routes loaded");
 
 // Initialize Express app
 const app = express();
